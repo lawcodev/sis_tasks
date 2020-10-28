@@ -8,7 +8,7 @@
       $controller = TaskCore::CreateControllerTask(); 
       $tasks = $controller->GetAllTasks(1); 
       $json_success_data = array(
-        'api_status' => '200',
+        'api_status' => 200,
         'api_text' => 'success',
         'api_version' => 1.1,
         'api_copyright' => 'lawcodev',

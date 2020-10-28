@@ -2,7 +2,7 @@
   $json_error_data;
   function GetErrorActionNotFound() {
     $json_error_data = array(
-      'api_status' => '400',
+      'api_status' => 400,
       'api_text' => 'failed',
       'api_version' => 1.1,
       'api_copyright' => 'lawcodev',

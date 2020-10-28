@@ -7,7 +7,7 @@
     
     if(empty($_GET['id']) || !isset($_GET['id'])) {
       $json_error_data = array(
-        'api_status' => '400',
+        'api_status' => 400,
         'api_text' => 'failed',
         'api_version' => 1.1,
         'api_copyright' => 'lawcodev',
@@ -29,7 +29,7 @@
           $controller = TaskCore::CreateControllerTask();
           $tasks = $controller->GetAllTasks(2, $finish_date);
           $json_success_data = array(
-            'api_status' => '200',
+            'api_status' => 200,
             'api_text' => 'success',
             'api_version' => 1.1,
             'api_copyright' => 'lawcodev',
