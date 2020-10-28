@@ -1,7 +1,6 @@
 
 <?php
   require_once 'Core/Task/TaskFunctions.php';
-  require_once 'Error/json_error.php';
 
   function API_GetTaskByFinishDate() {
     $json_success_data = array();
