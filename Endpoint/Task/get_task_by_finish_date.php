@@ -31,8 +31,8 @@
           $json_success_data = array(
             'api_status' => 200,
             'api_text' => 'success',
-            'api_version' => 1.1,
-            'api_copyright' => 'lawcodev',
+            'api_version' => $api_version,
+            'api_copyright' => $api_copyright,
             'tasks' => $tasks
           );    
           header("Content-type: application/json");

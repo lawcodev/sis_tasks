@@ -1,5 +1,4 @@
 <?php
-
 require_once 'Connection.php';
 require_once 'Models/Task.php';
 require_once 'Models/Type.php';
@@ -13,10 +12,15 @@ class RepositoryTask implements IRepositoryTask {
     $list = array();
     $reader = array(); 
     try {
-      if($type == 1) {
-        $result = $connection->query("CALL stp_getAllTasks()");  
-      } else if($type == 2){
-        $result = $connection->query("CALL stp_getByFinishDateTask('" . $param . "')");
+      switch ($type) {
+        case 1:
+          $result = $connection->query("CALL stp_getAllTasks()");  
+          break;
+        case 2:
+          $result = $connection->query("CALL stp_getByFinishDateTask('" . $param . "')");
+          break;
+        default:
+          break;
       }
       $i = 0;
       while ($fila = $result->fetch_row()) {
@@ -57,7 +61,6 @@ class RepositoryTask implements IRepositoryTask {
     }   
   }
 }
-
 ?>
 
 
