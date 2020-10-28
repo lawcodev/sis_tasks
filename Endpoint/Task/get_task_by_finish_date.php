@@ -1,16 +1,16 @@
 
 <?php
-  require_once 'Core/Task/TaskFunctions.php';
-
   function API_GetTaskByFinishDate() {
+    require_once 'Core/Task/TaskFunctions.php';
+    require_once 'Config/config.php';
+
     $json_success_data = array();
-    
     if(empty($_GET['id']) || !isset($_GET['id'])) {
       $json_error_data = array(
         'api_status' => 400,
         'api_text' => 'failed',
-        'api_version' => 1.1,
-        'api_copyright' => 'lawcodev',
+        'api_version' => $api_version,
+        'api_copyright' => $api_copyright,
         'errors' => array(
           'error_id' => '1',
           'error_text' => 'Peticion invalida, parametro no especificado.'
