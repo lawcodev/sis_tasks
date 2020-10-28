@@ -3,7 +3,7 @@
   require_once 'Endpoint/init.php';
   require_once 'Error/json_error.php';
         
-  class TokenEndPoint {
+  class StartEndPoint {
       
     public function __construct(){}
               

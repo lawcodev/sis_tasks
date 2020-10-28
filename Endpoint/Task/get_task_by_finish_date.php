@@ -27,7 +27,15 @@
           $month = substr($finish_date, 4, 6);
           $finish_date = $year . '-' . $month . '%';
           $controller = TaskCore::CreateControllerTask();
-          $json_success_data = $controller->GetAllTasks(2, $finish_date);
+          $tasks = $controller->GetAllTasks(2, $finish_date);
+          $json_success_data = array(
+            'api_status' => '200',
+            'api_text' => 'success',
+            'api_version' => 1.1,
+            'api_copyright' => 'lawcodev',
+            'tasks' => $tasks
+          );    
+          header("Content-type: application/json");
           echo json_encode($json_success_data, JSON_PRETTY_PRINT);
           exit();
         }
